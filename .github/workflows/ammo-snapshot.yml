@@ -7,6 +7,11 @@ on:
   schedule:
     - cron: "3,13,23,33,43,53 * * * *"   # 每小时 6 次，错开整点避开高峰延迟
   workflow_dispatch:                      # 也可以在 Actions 页面手动点一次
+  push:                                   # 改了抓取脚本/工作流时立刻跑一次，方便验证
+    paths:
+      - ".github/workflows/ammo-snapshot.yml"
+      - "scripts/ammo_static_build.py"
+      - "ammo_monitor.py"
 
 permissions:
   contents: write
