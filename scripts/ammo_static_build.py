@@ -326,8 +326,8 @@ def build(outdir: str, verbose: bool = True) -> dict:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="生成 GitHub Pages 静态数据")
-    ap.add_argument("--out", default=os.path.join(ROOT, "docs", "ammo", "data"),
-                    help="输出目录（默认 docs/ammo/data）")
+    ap.add_argument("--out", default=os.path.join(ROOT, "ammo", "data"),
+                    help="输出目录（默认 ammo/data）")
     ap.add_argument("--quiet", action="store_true")
     args = ap.parse_args()
     res = build(args.out, verbose=not args.quiet)
@@ -336,3 +336,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

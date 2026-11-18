@@ -29,18 +29,18 @@ jobs:
       - name: 同步前端页面（以 web/index.html 为准）
         run: |
           if [ -f web/index.html ]; then
-            mkdir -p docs/ammo
-            cp web/index.html docs/ammo/index.html
+            mkdir -p ammo
+            cp web/index.html ammo/index.html
           fi
 
       - name: 抓取并生成静态数据
-        run: python scripts/ammo_static_build.py --out docs/ammo/data
+        run: python scripts/ammo_static_build.py --out ammo/data
 
       - name: 提交
         run: |
           git config user.name "ammo-snapshot-bot"
           git config user.email "ammo-snapshot-bot@users.noreply.github.com"
-          git add docs/ammo
+          git add ammo
           if git diff --cached --quiet; then
             echo "数据没有变化，跳过提交"
             exit 0
@@ -52,3 +52,4 @@ jobs:
           done
           echo "推送失败，下次运行会再试"
           exit 1
+

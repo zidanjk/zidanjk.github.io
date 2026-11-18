@@ -6,10 +6,10 @@
 
 ## 数据怎么来的
 
-- 数据由 GitHub Actions 每 10 分钟抓一次第三方交易行镜像，写成 `docs/ammo/data/*.json` 后提交到本仓库。
+- 数据由 GitHub Actions 每 10 分钟抓一次第三方交易行镜像，写成 `ammo/data/*.json` 后提交到本仓库。
 - 页面是纯静态的，直接读这些 JSON，没有后端，也不需要谁电脑开机。
 - `scripts/ammo_static_build.py` 负责抓取、算指数、累积历史；`web/index.html` 是页面本体。
-- 想让页面改动生效：改 `web/index.html`，推上去后下一轮 Actions 会自动同步到 `docs/ammo/index.html`。
+- 想让页面改动生效：改 `web/index.html`，推上去后下一轮 Actions 会自动同步到 `ammo/index.html`。
 
 ## 指数口径
 
@@ -22,3 +22,4 @@
 - 只读：不支持关注清单、模拟盘、CSV 导出之外的任何写入操作。
 - 行情为第三方镜像数据，非官方接口，存在延迟；价格仅供判断趋势，成交以游戏内实际报价为准。
 - 与游戏厂商无关，仅作个人观察用。
+

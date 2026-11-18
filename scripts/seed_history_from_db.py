@@ -29,7 +29,7 @@ def day0_of(ts: int) -> int:
 
 def main() -> int:
     db = os.path.join(ROOT, "data", "monitor.db")
-    out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, "docs", "ammo", "data", "history.json")
+    out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, "ammo", "data", "history.json")
     if not os.path.exists(db):
         raise SystemExit("找不到 data/monitor.db")
 
@@ -126,3 +126,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
