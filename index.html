@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>zidanjk</title>
+<meta name="description" content="zidanjk 的个人主页">
+<style>
+  :root{
+    --bg:#fbfaf8; --fg:#1c1b19; --muted:#6b6762; --line:#e6e2dc; --card:#ffffff;
+    --accent:#1f5f4f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141414; --fg:#eae7e2; --muted:#9a948c; --line:#2c2c2c; --card:#1c1c1c; --accent:#6fc0a5; }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:16px; line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:72px 24px 96px}
+  header{padding-bottom:40px;border-bottom:1px solid var(--line)}
+  h1{font-size:2.2rem;letter-spacing:-0.5px;font-weight:700;line-height:1.25}
+  .tagline{margin-top:12px;color:var(--muted);font-size:1.02rem}
+  nav{margin-top:28px;display:flex;gap:22px;flex-wrap:wrap}
+  nav a{color:var(--muted);text-decoration:none;font-size:.94rem;border-bottom:1px solid transparent;padding-bottom:2px}
+  nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  h2{font-size:.86rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:20px}
+  p{color:var(--fg)}
+  .about p+p{margin-top:14px}
+  .cards{display:grid;gap:14px;margin-top:4px}
+  .card{
+    display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:20px 22px;text-decoration:none;color:inherit;transition:transform .18s ease,border-color .18s ease;
+  }
+  .card:hover{transform:translateY(-2px);border-color:var(--accent)}
+  .card .t{font-weight:600;font-size:1rem;margin-bottom:6px}
+  .card .d{color:var(--muted);font-size:.92rem;line-height:1.65}
+  .contact a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(31,95,79,.35)}
+  .contact a:hover{border-bottom-color:var(--accent)}
+  footer{padding-top:36px;color:var(--muted);font-size:.86rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  @media (max-width:520px){
+    .wrap{padding:52px 20px 72px}
+    h1{font-size:1.8rem}
+    nav{gap:16px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>zidanjk</h1>
+    <p class="tagline">记录，折腾，慢慢来。</p>
+    <nav>
+      <a href="#about">关于</a>
+      <a href="#works">在做的事</a>
+      <a href="#notes">笔记</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </header>
+
+  <section id="about" class="about">
+    <h2>关于</h2>
+    <p>你好，我是 zidanjk。这里是我的个人主页，用来放一些自己的东西：正在做的事、随手写下的笔记，还有觉得值得留下来的记录。</p>
+    <p>这个页面是<b>静态站点</b>，托管在 GitHub Pages 上，只有这一个 <code>index.html</code> 文件。想改内容的话，直接在仓库里编辑这个文件，保存后一分钟左右就会自动更新。</p>
+  </section>
+
+  <section id="works">
+    <h2>在做的事</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="t">个人主页</div>
+        <div class="d">就是你现在看到的这一页。一个够用就好、不折腾框架的站点。</div>
+      </div>
+      <div class="card">
+        <div class="t">待补充</div>
+        <div class="d">这里可以放你的项目、作品或者正在推进的计划，点开卡片链接就能跳转。</div>
+      </div>
+      <div class="card">
+        <div class="t">待补充</div>
+        <div class="d">同样是占位内容，换成你自己的就行。</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="notes">
+    <h2>笔记</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="t">第一篇</div>
+        <div class="d">想写点什么的时候，就把这里当成起点。以后可以按日期往下续。</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>联系</h2>
+    <p>邮件：<a href="mailto:2321915462@qq.com">2321915462@qq.com</a></p>
+    <p>GitHub：<a href="https://github.com/zidanjk" target="_blank" rel="noopener">github.com/zidanjk</a></p>
+  </section>
+
+  <footer>
+    <span>© <span id="y">2026</span> zidanjk</span>
+    <span>Hosted on GitHub Pages</span>
+  </footer>
+</div>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
